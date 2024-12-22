@@ -1,0 +1,64 @@
+import data from "locales.json"
+
+function change(elmentID, newInnerHtml) {
+  document.getElementById(elmentID).innerHTML = newInnerHtml;
+}
+
+// Units measured in other units (HOUR_S -> Hour in seconds)
+const HOUR_S = 3600
+const MINUTE_S = 60
+const SECOND_MS = 1000
+
+window.setInterval(update, 1000)
+
+function convertDailyTime(dailyTime) {
+
+  const hours = Math.floor(dailyTime / HOUR_S);
+  const minutes = Math.floor((dailyTime - (hours * HOUR_S)) / 60);
+  const seconds = Math.floor((dailyTime - (hours * HOUR_S) - (minutes * 60)));
+
+  return {
+    hours: hours,
+    minutes: minutes,
+    seconds: seconds,
+  }
+}
+
+function twoDigitNumber(unknownNumber) {
+  if (`${unknownNumber}`.length < 2) {
+    return `0${unknownNumber}`;
+  }
+  return unknownNumber;
+}
+
+function update() {
+  const currentUnixTimeSeconds = Math.ceil(Date.now() / SECOND_MS);
+
+  const timeDifferenceSeconds = -2 * -1 * HOUR_S;
+
+  const passedSeconds = currentUnixTimeSeconds % (60 * 60 * 24) + timeDifferenceSeconds;
+  const timeNow = convertDailyTime(passedSeconds);
+
+  change("current-time", `${twoDigitNumber(timeNow.hours)}:${twoDigitNumber(timeNow.minutes)}:${twoDigitNumber(timeNow.seconds)}`)
+
+  const targetTimeSeconds = HOUR_S * 23 + MINUTE_S * 30
+  const targetTime = convertDailyTime(targetTimeSeconds)
+  if (targetTime.seconds === 0) {
+    change("countdown", `${twoDigitNumber(targetTime.hours)}:${twoDigitNumber(targetTime.minutes)}`)
+  } else {
+    change("countdown", `${twoDigitNumber(targetTime.hours)}:${twoDigitNumber(targetTime.minutes)}:${twoDigitNumber(targetTime.seconds)}`)
+  }
+
+  if (targetTimeSeconds > passedSeconds) {
+    const remainingTimeSeconds = targetTimeSeconds - passedSeconds;
+    const remainingTime = convertDailyTime(remainingTimeSeconds);
+    change("hours", `${remainingTime.hours} hours`);
+    change("minutes", `${remainingTime.minutes} minutes`);
+    change("seconds", `${remainingTime.seconds} seconds`);
+  }
+
+  console.log(`There are ${timeNow.hours} hours, ${timeNow.minutes} minutes and ${timeNow.seconds} seconds left untill midnight.`);
+  console.log(data)
+}
+
+

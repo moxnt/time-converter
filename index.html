@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link href="css/tailwind.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <script type="module" src="script.js" defer></script>
+  <body class="bg-black text-white p-0 m-0 w-screen h-screen grid items-center">
+    <div
+      class="w-1/2 h-1/2 mx-auto bg-slate-800 rounded-3xl shadow-2xl shadow-sky-600"
+    >
+      <div
+        class="m-16 whitespace- font-semibold text-2xl tracking-wide grid grid-cols-2 grid-rows-3"
+      >
+        <div class="w-fit h-2/5 mx-auto">
+          <h3 class="leading-loose">It is currently</h3>
+          <h3>
+            <span id="current-time" class="font-bold">16:00</span>
+            <span
+              id="timezone0"
+              class="underline decoration-4 decoration-purple-600"
+              >EST</span
+            >
+          </h3>
+        </div>
+        <div class="w-fit h-2/5 mx-auto">
+          <h3 class="leading-loose">
+            <span
+              id="countdown"
+              class="underline decoration-4 decoration-blue-600"
+              >16:00</span
+            >
+            <span
+              id="timezone1"
+              class="underline decoration-4 decoration-purple-600"
+              >EST</span
+            >
+            in
+          </h3>
+          <ul>
+            <li><span id="hours">12 Hours</span></li>
+            <li><span id="minutes">7 minutes</span></li>
+            <li><span id="seconds">14 seconds</span></li>
+          </ul>
+        </div>
+        <hr class="col-span-2 border-2 rounded-3xl m-16" />
+        <div class="col-span-2 w-fit h-1/4 mx-auto">
+          <p>Config</p>
+        </div>
+        <div class="w-fit h-1/4 mx-auto">
+          <label for="zoneinput">Locale</label>
+          <input
+            class="bg-black"
+            type="text"
+            id="zoneinput"
+            name="fname"
+          /><br />
+        </div>
+        <div class="w-fit h-1/4 mx-auto">
+          <label for="appt">Select a time:</label>
+          <input class="bg-black" type="time" id="appt" name="appt" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
