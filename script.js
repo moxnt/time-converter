@@ -269,9 +269,13 @@ function tryUpdateTimezone() {
   let part2 = (part1[0] === undefined) ? "-2" : part1[0];
 
   if (part2[1] === "0") {
-    part2.splice(1, 1);
+    part2 = part2.replace("0", "");
   }
-  console.log(part2);
 
-  timeDifferenceSeconds = Number(part2) * -1 * HOUR_S
+  if (part2[0] === "-") {
+    console.log(part2)
+    timeDifferenceSeconds = Number(part2) * HOUR_S
+  } else {
+    timeDifferenceSeconds = Number(part2) * -1 * HOUR_S
+  }
 }
