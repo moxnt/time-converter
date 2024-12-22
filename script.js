@@ -3,6 +3,7 @@ function change(elmentID, newInnerHtml) {
 }
 
 function convertDailyTime(dailyTime) {
+  console.log(dailyTime)
 
   const hours = Math.floor(dailyTime / HOUR_S);
   const minutes = Math.floor((dailyTime - (hours * HOUR_S)) / 60);
@@ -38,6 +39,8 @@ function update() {
 
 
   const passedSeconds = currentUnixTimeSeconds % (HOUR_S * 24) + timeDifferenceSeconds;
+  console.log(`TD seconds -> ${timeDifferenceSeconds}`)
+  console.log(`Passed seconds -> ${passedSeconds}`)
   const timeNow = convertDailyTime(passedSeconds);
 
   change("current-time", `${twoDigitNumber(timeNow.hours)}:${twoDigitNumber(timeNow.minutes)}:${twoDigitNumber(timeNow.seconds)}`)
@@ -262,18 +265,20 @@ function tryUpdateTimezone() {
 
   const zoneID = document.getElementById("zoneinput").value;
 
-  const zone = (zones[zoneID] === undefined) ? "-2:00" : zones[zoneID];
-  change("timezone0", zoneID);
-  change("timezone1", zoneID);
+  let zone = zones[zoneID];
+
+  if (zone !== undefined) {
+    change("timezone0", zoneID);
+    change("timezone1", zoneID);
+  } else {
+    zone = "-2:00"
+  }
+
   const part1 = zone.split(':');
   let part2 = (part1[0] === undefined) ? "-2" : part1[0];
 
-  if (part2[1] === "0") {
-    part2 = part2.replace("0", "");
-  }
-
-  if (part2[0] === "-") {
-    console.log(part2)
+  if (part2[0] === "−") {
+    part2 = part2.slice(1, part2.length); //removes the first character
     timeDifferenceSeconds = Number(part2) * HOUR_S
   } else {
     timeDifferenceSeconds = Number(part2) * -1 * HOUR_S

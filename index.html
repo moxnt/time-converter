@@ -15,12 +15,12 @@
   <script type="module" src="script.js" defer></script>
   <body class="bg-black text-white p-0 m-0 w-screen h-screen grid items-center">
     <div
-      class="w-1/2 h-1/2 mx-auto bg-slate-800 rounded-3xl shadow-2xl shadow-sky-600"
+      class="h-fit mx-auto bg-slate-800 rounded-3xl shadow-2xl shadow-sky-600"
     >
       <div
         class="m-16 whitespace- font-semibold text-2xl tracking-wide grid grid-cols-2 grid-rows-3"
       >
-        <div class="w-fit h-2/5 mx-auto">
+        <div class="w-fit h-fit mx-auto">
           <h3 class="leading-loose">It is currently</h3>
           <h3>
             <span id="current-time" class="font-bold">16:00</span>
@@ -31,7 +31,7 @@
             >
           </h3>
         </div>
-        <div class="w-fit h-2/5 mx-auto">
+        <div class="w-fit h-fit mx-auto">
           <h3 class="leading-loose">
             <span
               id="countdown"
@@ -52,10 +52,10 @@
           </ul>
         </div>
         <hr class="col-span-2 border-2 rounded-3xl m-16" />
-        <div class="col-span-2 w-fit h-1/4 mx-auto">
+        <div class="col-span-2 w-fit h-fit mx-auto">
           <p>Config</p>
         </div>
-        <div class="w-fit h-1/4 mx-auto">
+        <div class="w-fit h-fit mx-auto">
           <label for="zoneinput">Locale</label>
           <input
             class="bg-black"
@@ -64,7 +64,7 @@
             name="fname"
           /><br />
         </div>
-        <div class="w-fit h-1/4 mx-auto">
+        <div class="w-fit h-fit mx-auto">
           <label for="appt">Select a time:</label>
           <input class="bg-black" type="time" id="appt" name="appt" />
         </div>
