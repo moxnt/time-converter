@@ -1,5 +1,9 @@
 {
+  "type": "module",
   "devDependencies": {
     "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
   }
 }
