@@ -3,7 +3,6 @@ function change(elmentID, newInnerHtml) {
 }
 
 function convertDailyTime(dailyTime) {
-
   const hours = Math.floor(dailyTime / HOUR_S);
   const minutes = Math.floor((dailyTime - (hours * HOUR_S)) / 60);
   const seconds = Math.floor((dailyTime - (hours * HOUR_S) - (minutes * 60)));
@@ -22,6 +21,12 @@ function twoDigitNumber(unknownNumber) {
   return unknownNumber;
 }
 
+function tryUpdateTargetTime() {
+  const ti = document.getElementById("timeinput");
+  const targetTime = ti.value.split(":");
+
+}
+
 // Units measured in other units (HOUR_S -> Hour in seconds)
 const HOUR_S = 3600
 const MINUTE_S = 60
@@ -30,6 +35,7 @@ const SECOND_MS = 1000
 let timeDifferenceSeconds = -2 * -1 * HOUR_S;
 
 document.getElementById("zoneinput").addEventListener("input", tryUpdateTimezone)
+document.getElementById("timeinput").addEventListener("input", tryUpdateTargetTime)
 
 window.setInterval(update, 1000)
 
@@ -262,17 +268,22 @@ function tryUpdateTimezone() {
 
   const zoneID = document.getElementById("zoneinput").value;
 
-  const zone = (zones[zoneID] === undefined) ? "-2:00" : zones[zoneID];
-  change("timezone0", zoneID);
-  change("timezone1", zoneID);
+  let zone = zones[zoneID];
+
+  if (zone !== undefined) {
+    change("timezone0", zoneID);
+    change("timezone1", zoneID);
+  } else {
+    zone = "-2:00"
+  }
+
   const part1 = zone.split(':');
   let part2 = (part1[0] === undefined) ? "-2" : part1[0];
 
-  if (part2[1] === "0") {
-    console.log(part2)
-    part2.splice(1, 1);
+  if (part2[0] === "−") {
+    part2 = part2.slice(1, part2.length); //removes the first character
+    timeDifferenceSeconds = Number(part2) * HOUR_S
+  } else {
+    timeDifferenceSeconds = Number(part2) * -1 * HOUR_S
   }
-  console.log(part2);
-
-  timeDifferenceSeconds = Number(part2) * -1 * HOUR_S
 }
