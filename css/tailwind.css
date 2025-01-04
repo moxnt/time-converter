@@ -575,29 +575,13 @@ video {
   display: grid;
 }
 
-.h-1\/2 {
-  height: 50%;
-}
-
-.h-1\/4 {
-  height: 25%;
-}
-
-.h-2\/5 {
-  height: 40%;
-}
-
-.h-screen {
-  height: 100vh;
-}
-
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
 }
 
-.w-1\/2 {
-  width: 50%;
+.h-screen {
+  height: 100vh;
 }
 
 .w-fit {
