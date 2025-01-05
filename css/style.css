@@ -9,3 +9,7 @@
 body {
   font-family: "Roboto mono", serif;
 }
+
+.main-dir {
+  box-shadow: #3b0764 0px 20px;
+}

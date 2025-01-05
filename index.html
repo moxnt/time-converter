@@ -13,10 +13,10 @@
     />
   </head>
   <script type="module" src="script.js" defer></script>
-  <body class="bg-black text-white p-0 m-0 w-screen h-screen grid items-center">
-    <div
-      class="h-fit mx-auto bg-slate-800 rounded-3xl shadow-2xl shadow-sky-600"
-    >
+  <body
+    class="bg-slate-950 text-white p-0 m-0 w-screen h-screen grid items-center"
+  >
+    <div class="main-dir h-fit mx-auto bg-purple-900 rounded-3xl">
       <div
         class="m-16 whitespace- font-semibold text-2xl tracking-wide grid grid-cols-2 grid-rows-3"
       >
@@ -58,7 +58,7 @@
         <div class="w-fit h-fit mx-auto">
           <label for="zoneinput">Locale</label>
           <input
-            class="bg-black"
+            class="inline-block bg-purple-950 rounded-l max-w-40"
             type="text"
             id="zoneinput"
             name="fname"
@@ -66,7 +66,12 @@
         </div>
         <div class="w-fit h-fit mx-auto">
           <label for="appt">Select a time:</label>
-          <input class="bg-black" type="time" id="timeinput" name="timeinput" />
+          <input
+            class="bg-purple-950 rounded-l"
+            type="time"
+            id="timeinput"
+            name="timeinput"
+          />
         </div>
       </div>
     </div>
