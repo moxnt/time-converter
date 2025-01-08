@@ -640,12 +640,13 @@ video {
   background-color: rgb(2 6 23 / var(--tw-bg-opacity, 1));
 }
 
-.p-0 {
-  padding: 0px;
+.bg-slate-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity, 1));
 }
 
-.p-2 {
-  padding: 0.5rem;
+.p-0 {
+  padding: 0px;
 }
 
 .p-4 {
@@ -703,5 +704,5 @@ body {
 }
 
 .main-dir {
-  box-shadow: #3b0764 0px 20px;
+  box-shadow: #0f172a 0px 20px;
 }
