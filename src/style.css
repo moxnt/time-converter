@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: hsl(0, 0%, 12%);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.b-tab {
+  background-color: hsl(0, 0%, 17%);
+  padding: 0.5rem;
+  padding-inline: 1rem;
+  font-size: 1.25rem;
+  transition-property: all;
+  transition-duration: 200ms;
+}
+
+.b-tab:hover {
+  background-color: hsl(0, 0%, 27%);
+  font-size: 1.35rem;
+  padding: 0.35rem;
+  padding-inline: 0.85rem;
+}
+
+.b-tab:active {
+  transition-duration: 100ms;
+  background-color: hsl(0, 0%, 22%);
+  padding: 0.6rem;
+  padding-inline: 1.1rem;
+  font-size: 1.15rem;
+}
+
+.selected {
+  text-decoration: underline;
+}
+
+.tab {
+  width: 25rem;
+  height: 10rem;
+  display: none;
+}
+
+.active {
+  display: inline-block;
+}
