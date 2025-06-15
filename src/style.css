@@ -15,6 +15,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+h2 {
+  font-size: 4.75em;
+  display: inline-block;
+}
+h3 {
+  font-size: 4em;
+  display: inline-block;
+}
+
 .b-tab {
   background-color: hsl(0, 0%, 17%);
   padding: 0.5rem;
@@ -44,8 +53,8 @@
 }
 
 .tab {
-  width: 25rem;
-  height: 10rem;
+  min-width: 40em;
+  height: fit-content;
   display: none;
 }
 

@@ -74,7 +74,7 @@ function update() {
 
     const remainingTimeSeconds = targetTimeSeconds - passedSeconds + (24 * HOUR_S);
     const remainingTime = convertDailyTime(remainingTimeSeconds);
-    change("hours", `${remainingTime.hours} hours`);
+    change("hours", `${remainingTime.hours} hours`); sc
     change("minutes", `${remainingTime.minutes} minutes`);
     change("seconds", `${remainingTime.seconds} seconds`);
   }
