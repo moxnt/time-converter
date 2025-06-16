@@ -24,6 +24,16 @@ h3 {
   display: inline-block;
 }
 
+.layer-0 {
+  background-color: hsl(0, 0%, 12%);
+}
+.layer-1 {
+  background-color: hsl(0, 0%, 17%);
+}
+.layer-2 {
+  background-color: hsl(0, 0%, 23%);
+}
+
 .b-tab {
   background-color: hsl(0, 0%, 17%);
   padding: 0.5rem;

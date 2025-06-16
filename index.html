@@ -34,15 +34,46 @@
           <h2>
             <b id="clock-h">12</b>:<b id="clock-m">00</b>:<b id="clock-s">00</b>
           </h2>
-          <h3 class="ml-4">UTC</h3>
+          <h3 class="ml-4" id="timezone-field">UTC</h3>
         </div>
       </div>
       <div id="tab2" class="tab">
-        <button id="thebutton" class="bg-indigo-600" type="button">
-          Test me!
-        </button>
+        <div class="m-auto h-fit w-fit">
+          <h2>
+            <b id="alarm-h">12</b>:<b id="alarm-m">00</b>:<b id="alarm-s">00</b>
+          </h2>
+        </div>
+        <div class="m-auto h-fit w-fit">
+          <h2>
+            <b id="target-h">12</b>:<b id="target-m">00</b>:<b id="target-s"
+              >00</b
+            >
+          </h2>
+          <h3 class="ml-4" id="timezone-field">UTC</h3>
+        </div>
       </div>
-      <div id="tab3" class="tab"></div>
+      <div id="tab3" class="tab flex">
+        <div>
+          <h4>Timezone:</h4>
+          <input
+            id="input-timezone"
+            class="layer-1"
+            type="text"
+            name=""
+            value=""
+          />
+        </div>
+        <div>
+          <h4>Countdown to:</h4>
+          <input
+            id="input-alarm"
+            class="layer-1"
+            type="time"
+            name=""
+            value=""
+          />
+        </div>
+      </div>
     </div>
   </body>
 </html>
