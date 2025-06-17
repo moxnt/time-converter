@@ -48,11 +48,16 @@
   font-size: 0.7em;
 }
 
+.enlarged {
+  font-size: 1.5em;
+}
+
 .tab input {
   max-width: 40%;
 }
 
 .b-tab {
+  border-radius: 0.3em;
   min-width: 25%;
   background-color: hsl(0, 0%, 17%);
   padding: 0.5rem;

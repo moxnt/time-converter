@@ -42,7 +42,7 @@ function update_alarm(time_difference: number, alarm_time_us: number) {
   let element_m = document.getElementById("alarm-m");
   let element_s = document.getElementById("alarm-s");
   let target_h = document.getElementById("target-h");
-  let target_m = document.getElementById("targetm");
+  let target_m = document.getElementById("target-m");
   if (
     element_h === null ||
     element_m === null ||

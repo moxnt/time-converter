@@ -12,7 +12,7 @@
     <script type="module" src="/src/tabs.ts" defer></script>
     <script type="module" src="/src/main.ts" defer></script>
     <link href="src/style.css" rel="stylesheet" />
-    <title>Nodders</title>
+    <title>Time</title>
   </head>
   <body class="m-0 flex h-screen w-screen flex-col p-0">
     <!-- Tab controls -->
@@ -33,11 +33,11 @@
     <!-- Tab 1 - current time-->
     <div class="mt-auto mb-auto self-center">
       <div id="tab1" class="tab">
-        <div class="m-auto h-fit w-fit">
-          <h2>
+        <div class="enlarged m-auto h-fit w-fit">
+          <span class="time-field">
             <b id="clock-h">12</b>:<b id="clock-m">00</b>:<b id="clock-s">00</b>
-          </h2>
-          <h3 class="ml-4" id="timezone-field">UTC</h3>
+          </span>
+          <span class="timezone-field ml-4" id="timezone-field">UTC</span>
         </div>
       </div>
 
