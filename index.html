@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Time</title>
+    <script type="module" crossorigin src="/assets/index-BnyGSioL.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-4CAG9AZr.css">
+  </head>
+  <body class="m-0 flex h-screen w-screen flex-col p-0">
+    <!-- Tab controls -->
+    <div
+      class="flex h-fit w-1/3 flex-row justify-between self-center justify-self-start"
+    >
+      <button data-controls-id="tab1" class="b-tab" type="button">
+        Time now
+      </button>
+      <button data-controls-id="tab2" class="b-tab" type="button">
+        Countdown
+      </button>
+      <button data-controls-id="tab3" class="b-tab" type="button">
+        Configuration
+      </button>
+    </div>
+
+    <!-- Tab 1 - current time-->
+    <div class="mt-auto mb-auto self-center">
+      <div id="tab1" class="tab">
+        <div class="enlarged m-auto h-fit w-fit">
+          <span class="time-field">
+            <b id="clock-h">12</b>:<b id="clock-m">00</b>:<b id="clock-s">00</b>
+          </span>
+          <span class="timezone-field ml-4" id="timezone-field">UTC</span>
+        </div>
+      </div>
+
+      <!-- Tab 2 - alarm / countdown -->
+      <div id="tab2" class="tab active">
+        <div class="mx-auto h-fit w-fit">
+          <span class="time-field grid h-fit w-fit grid-cols-2"
+            ><b id="alarm-h">12</b>
+            <p>Hours</p>
+            <b id="alarm-m">00</b>
+            <p>Minutes</p>
+            <b id="alarm-s">00</b>
+            <p>Seconds</p>
+          </span>
+
+          <span class="text">until</span>
+          <span class="time-field"
+            ><b id="target-h">12</b>:<b id="target-m">00</b></span
+          >
+          <span class="timezone-field" id="timezone-field"> UTC</span>
+        </div>
+      </div>
+
+      <!-- Tab 3 - Configuration -->
+      <div id="tab3" class="tab">
+        <div class="mx-auto h-fit w-fit">
+          <div class="shrunk grid grid-cols-2">
+            <h4>Timezone</h4>
+            <input id="input-timezone" class="layer-1" type="text" />
+            <h4>Countdown to</h4>
+            <input id="input-alarm" class="layer-1" type="time" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
