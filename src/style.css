@@ -15,15 +15,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-h2 {
-  font-size: 4.75em;
-  display: inline-block;
-}
-h3 {
-  font-size: 4em;
-  display: inline-block;
-}
-
 .layer-0 {
   background-color: hsl(0, 0%, 12%);
 }
@@ -34,7 +25,35 @@ h3 {
   background-color: hsl(0, 0%, 23%);
 }
 
+.info {
+  display: inline-block;
+}
+.tab .timezone-field {
+  font-size: 1em;
+  font-weight: 600;
+}
+.tab .time-field {
+  font-size: 1em;
+}
+.tab .text {
+  font-size: 1em;
+  opacity: 0.7;
+}
+.tab p {
+  font-size: 1em;
+  opacity: 0.9;
+}
+
+.tab .shrunk {
+  font-size: 0.7em;
+}
+
+.tab input {
+  max-width: 40%;
+}
+
 .b-tab {
+  min-width: 25%;
   background-color: hsl(0, 0%, 17%);
   padding: 0.5rem;
   padding-inline: 1rem;
@@ -63,8 +82,10 @@ h3 {
 }
 
 .tab {
+  font-size: 4em;
   min-width: 40em;
   height: fit-content;
+  width: fit-content;
   display: none;
 }
 

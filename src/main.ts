@@ -33,20 +33,29 @@ function update_clock(time_difference: number) {
   element_s.innerText = ensureFormat(time.seconds);
 }
 
-function update_alarm(time_difference: number, alarm_time: number) {
+function update_alarm(time_difference: number, alarm_time_us: number) {
+  let alarm_time = new Time(alarm_time_us);
   let time = new Time(
-    new Time(Math.floor(Date.now() / 1000) + time_difference).until(
-      new Time(alarm_time),
-    ),
+    new Time(Math.floor(Date.now() / 1000) + time_difference).until(alarm_time),
   );
-
   let element_h = document.getElementById("alarm-h");
   let element_m = document.getElementById("alarm-m");
   let element_s = document.getElementById("alarm-s");
-  if (element_h === null || element_m === null || element_s === null) {
+  let target_h = document.getElementById("target-h");
+  let target_m = document.getElementById("targetm");
+  if (
+    element_h === null ||
+    element_m === null ||
+    element_s === null ||
+    target_h === null ||
+    target_m === null
+  ) {
     console.error("One or more clock element/s was not present");
     return;
   }
+
+  target_h.innerText = ensureFormat(alarm_time.hours);
+  target_m.innerText = ensureFormat(alarm_time.minutes);
   element_h.innerText = ensureFormat(time.hours);
   element_m.innerText = ensureFormat(time.minutes);
   element_s.innerText = ensureFormat(time.seconds);

@@ -7,7 +7,6 @@ export class Config {
   constructor(timezone = "UTC", alarm_time = 0) {
     this.timezone = timezone;
     this.alarm_time = alarm_time;
-    this.store();
   }
 
   static store_alarm_time(time_uts: number) {
@@ -57,7 +56,7 @@ controls.forEach((element) => {
   });
 });
 
-document.getElementById("input-alarm")?.addEventListener("input", (event) => {
+document.getElementById("input-alarm")?.addEventListener("change", (event) => {
   let e = event.target as HTMLInputElement;
   let split = e.value.split(":");
   let parsed_time = 0;
